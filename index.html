@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<title>Neural Network Perceptron</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+</style>
+<head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/synaptic/1.0.8/synaptic.js"></script>
+</head>
+<body>
+
+  <div class="w3-content" style="max-width:1400px">
+
+  <!-- Header -->
+  <div class="w3-container w3-center w3-padding-32">
+    <h1><b>Neural Net</b></h1>
+    <p>Iterating over generation<span id="iteration"></span></p>
+  </div>
+      <script src="scripts.js"></script>
+
+      <script>
+      var element = document.getElementById("iteration");
+      document.getElementById("iteration").innerHTML =
+      " 1000";
+      </script>
+
+      <script type="text/javascript">
+         function WebSocketTest()
+         {
+            if ("WebSocket" in window)
+            {
+               console.log("WebSocket is supported by your Browser!");
+               // Let us open a web socket
+               var ws = new WebSocket("ws://192.168.0.10:8888/output");
+               ws.onopen = function()
+               {
+                  // Web Socket is connected, send data using send()
+                  ws.send("Message to send");
+                  x++;
+                 console.log("Message is sent...");
+               };
+               ws.onmessage = function (evt)
+               {
+                  var received_msg = evt.data;
+                  console.log(received_msg);
+               };
+               ws.onclose = function()
+               {
+                  // websocket is closed.
+                  alert("Connection is closed...");
+               };
+            }
+            else
+            {
+               // The browser doesn't support WebSocket
+               alert("WebSocket NOT supported by your Browser!");
+            }
+         }
+      </script>
+
+    </body>
+</html>
